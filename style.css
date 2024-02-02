@@ -1,0 +1,112 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: Arial, Helvetica, sans-serif;
+}
+.background {
+	height: 100vh; 
+	width: 100vw;
+	background: url('images/newback.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+.bird {
+	height: 100px;
+	width: 130px;
+	position: fixed;
+	top: 40vh;
+	left: 30vw;
+	z-index: 100;
+}
+.pipe_sprite {
+	position: fixed;
+	top: 40vh;
+	left: 100vw;
+	height: 70vh;
+	width: 6vw;
+	background:radial-gradient(lightgreen 50%, green);
+	border: 5px solid black;
+}
+.message {
+	position: absolute;
+	z-index: 10;
+	color: black;
+	top: 30%;
+	left: 50%;
+	font-size: 4em;
+	transform: translate(-50%, -50%);
+	text-align: center;
+}
+.messageStyle{
+	background: white;
+	padding: 30px;
+	box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+	border-radius: 5%;
+}
+.score {
+	position: fixed;
+	z-index: 10;
+	height: 10vh;
+	font-size: 10vh;
+	font-weight: 100;
+	color: white;
+	-webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: black;
+	top: 0;
+	left: 0;
+	margin: 10px;
+	font-family: Arial, Helvetica, sans-serif;
+}
+.score_val {
+	color: gold;
+	font-weight: bold;
+}
+
+@media only screen and (max-width: 768px), (max-height: 500px) {
+    .bird {
+        width: 25vw; /* Adjusted width to maintain aspect ratio */
+        height: auto; /* Let the height adjust automatically */
+        left: 2%; /* Adjusted positioning */
+    }
+
+    .pipe_sprite {
+        width: 20vw; /* Adjusted width */
+        margin-bottom: -3vh; /* Adjust margin to bring pipes closer together */
+    }
+
+
+    .message {
+        font-size: 8vw; /* Adjusted font size */
+    }
+
+    .score {
+        font-size: 4vw; /* Adjusted font size */
+    }
+
+    /* Adjust pipe positioning */
+    .pipe_sprite:nth-child(odd) {
+        top: -10vh;
+    }
+
+    .pipe_sprite:nth-child(even) {
+        bottom: -10vh;
+    }
+
+    /* Hide click-text on mobile */
+    .click-text {
+        display: none;
+    }
+
+    /* Show mobile-text on mobile */
+    .mobile-text {
+        display: block;
+    }
+
+    /* Adjust pipe gap for closer pipes */
+    .pipe_sprite {
+        margin-bottom: -5vh; /* Adjust the margin between pipes */
+    }
+}
